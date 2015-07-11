@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/bt_left"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
             android:onClick="btnClick"/>
 
         <Button
+            android:id="@+id/bt_right"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -23,6 +25,8 @@
             android:onClick="btnClick"/>
 
         <Button
+            android:id="@+id/bt_up"
+
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -30,6 +34,7 @@
             android:onClick="btnClick"/>
 
         <Button
+            android:id="@+id/bt_down"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
