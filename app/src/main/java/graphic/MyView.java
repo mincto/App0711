@@ -5,16 +5,25 @@
 * */
 package graphic;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
+
+import net.stylenetwork.app0711.R;
+
 public class MyView extends View {
+
+    /* 사각형의 너비,높이*/
+    int width=50;
+    int height=40;
+
     /* 모든 뷰는 액티비티를 벗어날수 없으므로, 생성자의 인수에
     *  액티비티를 넘겨주자
     * */
-
     /* 만일 개발자가 xml 파일에서 이 뷰를 사용할 경우 각종 width, height
     정보가 전달되므로, 반드시 AttributeSet 이 있는 생성자를 준비해야 한다*/
     public MyView(Context context, AttributeSet set) {
@@ -37,8 +46,17 @@ public class MyView extends View {
         주로 색상, 두께 등..
         */
         paint.setColor(Color.RED);
+        canvas.drawLine(0, 0, 300, 400, paint);
 
-        canvas.drawLine(0,0,300,400, paint);
+        /* 사각형  */
+        canvas.drawRect(300,200, 300+width, 200+height, paint);
+
+        /* 비트맵 이미지 그리기
+        *  비트맵객체를 얻기위해서는 BitmapFactory 객체를사용해야 함
+        * */
+        Bitmap bit= BitmapFactory.decodeResource( getResources() , R.drawable.batman );
+        canvas.drawBitmap(bit, 100, 400, null);
+
     }
 }
 
